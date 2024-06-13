@@ -35,23 +35,26 @@ func main() {
 
 	for i := 0; i < q; i++ {
 		var index int
+		var test bool
 		myscanner.Scan()
 		str := myscanner.Text()
-
+		test = false
 		for i := 0; i < n; i++ {
 			index = strings.Index(str, countryCode[i])
 			if index != -1 {
 				result = append(result, m[countryCode[i]])
-			} else {
-				result = append(result, "Invalid Number")
+				test = true
 			}
+		}
+		if test == false {
+			result = append(result, "Invalid Number")
 		}
 
 	}
 
-	fmt.Println(countnryName)
-	fmt.Println(countryCode)
-	fmt.Println(m)
+	//fmt.Println(countnryName)
+	//fmt.Println(countryCode)
+	//fmt.Println(m)
 
 	for _, v := range result {
 		fmt.Println(v)
