@@ -15,6 +15,7 @@ func main() {
 	var countryCode []string
 	var result []string
 	m := make(map[string]string)
+
 	myscanner.Scan()
 	n, _ := strconv.Atoi(myscanner.Text())
 
@@ -25,9 +26,7 @@ func main() {
 		countnryName = append(countnryName, firstfield...)
 		secondfield := []string{fields[1]}
 		countryCode = append(countryCode, secondfield...)
-		//m[countnryCode[i]] = countnryName[i]
 		m[countryCode[i]] = countnryName[i]
-
 	}
 
 	myscanner.Scan()
@@ -49,7 +48,6 @@ func main() {
 		if test == false {
 			result = append(result, "Invalid Number")
 		}
-
 	}
 
 	//fmt.Println(countnryName)
