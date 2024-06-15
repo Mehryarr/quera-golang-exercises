@@ -46,20 +46,11 @@ func main() {
 		}
 	}
 
-	//fmt.Println(library)
-	//for key, value := range library {
-	//	fmt.Printf("Key : %v, Value : %v\n", key, value)
-	//}
-
-	// Create a slice of shabak keys from the library map
 	keys := make([]string, 0, len(library))
 	for key := range library {
 		keys = append(keys, key)
 	}
-	fmt.Println(shabak)
-	fmt.Println(bookname)
 
-	// Sort the keys using a custom comparator
 	sort.Slice(keys, func(i, j int) bool {
 		if library[keys[i]] == library[keys[j]] {
 			numi, _ := strconv.Atoi(keys[i])
@@ -69,9 +60,8 @@ func main() {
 		return library[keys[i]] < library[keys[j]]
 	})
 
-	// Print the sorted library
 	for _, key := range keys {
-		fmt.Printf("Key: %v, Value: %v\n", key, library[key])
+		fmt.Println(key)
 	}
 
 }
