@@ -4,8 +4,14 @@ type FilterFunc func(int) bool
 type MapperFunc func(int) int
 
 func IsSquare(x int) bool {
-	//TODO
-	return false
+	for i := 1; ; i = i + 2 {
+		x -= i
+		if x == 0 {
+			return true
+		} else if x <= 0 {
+			return false
+		}
+	}
 }
 
 func IsPalindrome(x int) bool {
