@@ -32,7 +32,7 @@ func TryFinish(car *Car, distance int) string {
 		return ""
 	} else {
 		car.battery = car.battery - distance/2
-		res := fmt.Sprintf("%f", time)
+		res := fmt.Sprintf("%.2f", time)
 		return res
 	}
 }
