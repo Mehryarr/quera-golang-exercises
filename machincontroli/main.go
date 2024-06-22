@@ -8,7 +8,7 @@ type Car struct {
 }
 
 func NewCar(speed, battery int) *Car {
-	var ncar = Car{speed: speed, battery: battery}
+	var ncar = Car{speed, battery}
 	return &ncar
 }
 func GetSpeed(car *Car) int {
