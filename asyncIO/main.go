@@ -69,19 +69,20 @@ func (fResult *FutureResult) Await() string {
 
 func CombineFutureResults(fResults ...*FutureResult) *FutureResult {
 	combinedResult := &FutureResult{
-		ResultChan: make(chan string, 1),
+		ResultChan: make(chan string, len(fResults)),
 		doneChan:   make(chan struct{}),
 	}
 
 	go func() {
-		combinedString := ""
 		for _, fResult := range fResults {
-			combinedString += fResult.Await()
+			// Send each result individually as they complete
+			res := fResult.Await()
+			combinedResult.ResultChan <- res
 		}
-		combinedResult.ResultChan <- combinedString
-		combinedResult.Result = combinedString
+
 		combinedResult.Done.Store(true)
 		close(combinedResult.doneChan)
+		close(combinedResult.ResultChan) // Close the channel once all results are sent
 	}()
 
 	return combinedResult
