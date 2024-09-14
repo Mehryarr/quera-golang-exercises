@@ -1,0 +1,4 @@
+github.com/bozd4g/go-http-client v1.0.2 h1:qVmsNAFzwhuxQG7D+mR4Yq69R5D3cmAlWCszqj2mNfI=
+github.com/bozd4g/go-http-client v1.0.2/go.mod h1:oMkSTEcaxBoow1/jd1pXKLK0GIeEZTmpzEMF3bdLiqU=
+github.com/pkg/errors v0.9.1 h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+github.com/pkg/errors v0.9.1/go.mod h1:bwawxfHBFNV+L2hUp1rHADufV3IMtnDRdf1r5NINEl0=
